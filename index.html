@@ -718,23 +718,14 @@
 
       
         
-          
-            <h2 id="基于交通肇事案件的事发原因的抽取"><a href="#基于交通肇事案件的事发原因的抽取" class="headerlink" title="基于交通肇事案件的事发原因的抽取"></a>基于交通肇事案件的事发原因的抽取</h2><h3 id="项目概述："><a href="#项目概述：" class="headerlink" title="项目概述："></a>项目概述：</h3><p>利用原始的裁判文书，将信息定位到裁判文书中的案件基本情况描述里面，然后依据词，词性和关键词三个特征来进行crf的模型的训练，从而抽取出案件的事发原因。以期进一步辅助量刑的判断</p>
-<h3 id="项目目的："><a href="#项目目的：" class="headerlink" title="项目目的："></a>项目目的：</h3><p>最终可以抽取出事发原因如：因操作不当，因追尾等。</p>
-<h3 id="项目数据处理："><a href="#项目数据处理：" class="headerlink" title="项目数据处理："></a>项目数据处理：</h3><p>前期是人工进行数据的抽取，即手动抽取案件基本情况里的事发原因，总计大约有1000多条数据，将其划分成训练集和测试集，在调用crf++工具进行模型训练。</p>
-<h3 id="项目知识点总结"><a href="#项目知识点总结" class="headerlink" title="项目知识点总结"></a>项目知识点总结</h3><p>crf算法，可以结合隐马尔科夫模型一起学习。<br>调参数：crf中比较重要的参数。-c代价参数，过大可能会导致过拟合。-a训练算法，CRF|MIRA，本实验选用的是CRF-L1。<br>crf特征选用说明：（采取5位标注法）<br>    1.相对比与单个的字，词更能表述出含义<br>    2.词性也是一个重要的特征。因为事发原因大都一些固定形式得短语组成<br>    3.关键词：作为事发原因，很多都是以“因为”，“由于”开头，还有一些如：“追尾”，“醉驾”等词都很大概率上是事发原因的组成部分。因此实验将关键词拆分成为事发原因的开头，结尾，中间三个属性标注。<br>特征模板：本实验进行多次比较，选用窗口长度为3。</p>
-<h3 id="crf详解："><a href="#crf详解：" class="headerlink" title="crf详解："></a>crf详解：</h3><p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">更多</a></p>
-<h3 id="HMM详解："><a href="#HMM详解：" class="headerlink" title="HMM详解："></a>HMM详解：</h3><p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">更多</a></p>
-<hr>
-<h2 id="雪球网数据分析"><a href="#雪球网数据分析" class="headerlink" title="雪球网数据分析"></a>雪球网数据分析</h2><h3 id="项目概述：-1"><a href="#项目概述：-1" class="headerlink" title="项目概述："></a>项目概述：</h3><p>1.爬取雪球网股票相关的价格信息。（scrapy框架）<br>2.利用spark中的mapreduce操作统计前30最受欢迎的股票<br>3.图计算研究不同股票的相关性，给用户进行推荐<br>4.对用户进行聚类形成权威用户，水军和普通用户三大类。并利用逻辑回归，随机森林，朴素贝叶斯算法依据聚类结果进行分类。</p>
-<h3 id="项目知识点总结-1"><a href="#项目知识点总结-1" class="headerlink" title="项目知识点总结"></a>项目知识点总结</h3><p>crf算法，可以结合隐马尔科夫模型一起学习。<br>调参数：crf中比较重要的参数。-c代价参数，过大可能会导致过拟合。-a训练算法，CRF|MIRA，本实验选用的是CRF-L1。<br>crf特征选用说明：（采取5位标注法）<br>    1.相对比与单个的字，词更能表述出含义<br>    2.词性也是一个重要的特征。因为事发原因大都一些固定形式得短语组成<br>    3.关键词：作为事发原因，很多都是以“因为”，“由于”开头，还有一些如：“追尾”，“醉驾”等词都很大概率上是事发原因的组成部分。因此实验将关键词拆分成为事发原因的开头，结尾，中间三个属性标注。<br>特征模板：本实验进行多次比较，选用窗口长度为3。</p>
-<h3 id="聚类算法详解："><a href="#聚类算法详解：" class="headerlink" title="聚类算法详解："></a>聚类算法详解：</h3><p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">更多</a></p>
-<h3 id="LR-SVM-RF-朴素贝叶斯："><a href="#LR-SVM-RF-朴素贝叶斯：" class="headerlink" title="LR,SVM,RF,朴素贝叶斯："></a>LR,SVM,RF,朴素贝叶斯：</h3><p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">更多</a></p>
-<hr>
-<h2 id="基于用户位置的网络服务推荐方法研究。"><a href="#基于用户位置的网络服务推荐方法研究。" class="headerlink" title="基于用户位置的网络服务推荐方法研究。"></a>基于用户位置的网络服务推荐方法研究。</h2><h3 id="项目概述：-2"><a href="#项目概述：-2" class="headerlink" title="项目概述："></a>项目概述：</h3><p>利用Gowalla社交网络数据研究用户的偏好，地点的热度，好友的影响力的推荐。</p>
-<h3 id="项目知识点总结-2"><a href="#项目知识点总结-2" class="headerlink" title="项目知识点总结"></a>项目知识点总结</h3><p>用户的偏好：<br>地点的热度：<br>好友的影响力：</p>
-
-          
+          <h2 id="基于交通肇事案件的事发原因的抽取"><a href="#基于交通肇事案件的事发原因的抽取" class="headerlink" title="基于交通肇事案件的事发原因的抽取"></a>基于交通肇事案件的事发原因的抽取</h2><h3 id="项目概述："><a href="#项目概述：" class="headerlink" title="项目概述："></a>项目概述：</h3><p>利用原始的裁判文书，将信息定位到裁判文书中的案件基本情况描述里面，然后依据词，词性和关键词三个特征来进行crf的模型的训练，从而抽取出案件的事发原因。以期进一步辅助量刑的判断<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/30/项目/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -875,14 +866,6 @@
         
           
             <p>机器学习算法岗位面试心得：<br>1.首先得有个良好的自我介绍<br>2.然后对于自己的项目得说出亮点，包含对项目的思考。将项目往机器学习的方向去转入。<br>3.机器学习的算法知识点，特别是一些最基础的知识点还是要能深入的理解其中的数学思想，不能仅仅停留在表面。<br>4.普通的算法题目也要注意，一般都会问到。<br>5.数据结构基本知识点要详细了解，c++基本知识点要会一点会更好</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
           
         
