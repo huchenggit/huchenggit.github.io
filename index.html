@@ -572,39 +572,14 @@
 
       
         
-          
-            <p>&lt; !–more–&gt;</p>
-<h2 id="指针和引用"><a href="#指针和引用" class="headerlink" title="指针和引用"></a>指针和引用</h2><p>&lt; !–more–&gt;<br>1.指针：指针是一个变量，只不过这个变量存储的是一个地址，指向内存的一个存储单元；而引用跟原来的变量实质上是同一个东西，只不过是原变量的一个别名而已。如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a=1;int *p=&amp;a;</span><br><span class="line">int a=1;int &amp;b=a;</span><br></pre></td></tr></table></figure></p>
-<p>2.引用不可以为空，当被创建的时候，必须初始化，而指针可以是空值，可以在任何时候被初始化。<br>4.指针可以有多级，但是引用只能是一级（int **p；合法 而 int &amp;&amp;a是不合法的）<br>5.指针的值在初始化后可以改变，即指向其它的存储单元，而引用在进行初始化后就不会再改变了。<br>6.引用传递和指针传递是不同的，虽然它们都是在被调函数栈空间上的一个局部变量，但是任何对于引用参数的处理都会通过一个间接寻址的方式操作到主调函数中的相关变量。而对于指针传递的参数，如果改变被调函数中的指针地址，它将影响不到主调函数的相关变量。如果想通过指针参数传递来改变主调函数中的相关变量，那就得使用指向指针的指针，或者指针引用。<br>7.引用没有const<br>8.“sizeof引用”得到的是所指向对象的大小，而“sizeof指针”得到的是指针本身的大小<br>9.指针和引用自增运算意义不同：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int a=0;</span><br><span class="line">int b=&amp;a;</span><br><span class="line">int *p=&amp;a;</span><br><span class="line">b++;相当于a++;b只是a的一个别名,和a一样使用.</span><br><span class="line">p++;后p指向a后面的内存</span><br><span class="line">(*p)++;相当于a++</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h2><p>由于C++语言没有自动内存回收机制，程序员每次new出来的内存都要手动delete。程序员忘记 delete，流程太复杂，最终导致没有delete，异常导致程序过早退出，没有执行delete的情况并不罕见。<br>&lt; !–more–&gt;</p>
-<h3 id="几种常见的智能指针以及智能指针的设计："><a href="#几种常见的智能指针以及智能指针的设计：" class="headerlink" title="几种常见的智能指针以及智能指针的设计："></a>几种常见的智能指针以及智能指针的设计：</h3><p><a href="https://www.cnblogs.com/wxquare/p/4759020.html" target="_blank" rel="noopener">详解</a></p>
-<hr>
-<h2 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h2><p>&lt; !–more–&gt;<br>1.内联函数</p>
-<p>在C++中我们通常定义以下函数来求两个整数的最大值：</p>
-<p>复制代码 代码如下:</p>
-<pre><code class="bash">int max(int a, int b)
-{
- <span class="built_in">return</span> a &gt; b ? a : b;
-}
-</code></pre>
-<p>为这么一个小的操作定义一个函数的好处有：</p>
-<p>① 阅读和理解函数 max 的调用，要比读一条等价的条件表达式并解释它的含义要容易得多<br>② 如果需要做任何修改，修改函数要比找出并修改每一处等价表达式容易得多<br>③ 使用函数可以确保统一的行为，每个测试都保证以相同的方式实现<br>④ 函数可以重用，不必为其他应用程序重写代码</p>
-<p>虽然有这么多好处，但是写成函数有一个潜在的缺点：调用函数比求解等价表达式要慢得多。在大多数的机器上，调用函数都要做很多工作：调用前要先保存寄存器，并在返回时恢复，复制实参，程序还必须转向一个新位置执<br>2.关键字 inline 必须与函数定义体放在一起才能使函数成为内联，仅将 inline 放在函数声明前面不起任何作用。<br>3.定义在类声明之中的成员函数将自动地成为内联函数，例如：<br>复制代码 代码如下:<br>class A<br>{<br>public:<br> void Foo(int x, int y) { … }   // 自动地成为内联函数<br>}<br>但是编译器是否将它真正内联则要看 Foo函数如何定义<br>4.内联函数应该在头文件中定义，这一点不同于其他函数。编译器在调用点内联展开函数的代码时，必须能够找到 inline 函数的定义才能将调用函数替换为函数代码，而对于在头文件中仅有函数声明是不够的。<br>当然内联函数定义也可以放在源文件中，但此时只有定义的那个源文件可以用它，而且必须为每个源文件拷贝一份定义(即每个源文件里的定义必须是完全相同的)，当然即使是放在头文件中，也是对每个定义做一份拷贝，只不过是编译器替你完成这种拷贝罢了。<br>5.慎用内联<br>Tip： 只有当函数只有 10 行甚至更少时才将其定义为内联函数.<br>优点: 当函数体比较小的时候, 内联该函数可以令目标代码更加高效. 对于存取函数以及其它函数体比较短, 性能关键的函数, 鼓励使用内联.<br>缺点: 滥用内联将导致程序变慢. 内联可能使目标代码量或增或减, 这取决于内联函数的大小. 内联非常短小的存取函数通常会减少代码大小, 但内联一个相当大的函数将戏剧性的增加代码大小. 现代处理器由于更好的利用了指令缓存, 小巧的代码往往执行更快。<br>结论: 一个较为合理的经验准则是, 不要内联超过 10 行的函数. 谨慎对待析构函数, 析构函数往往比其表面看起来要更长, 因为有隐含的成员和基类析构函数被调用!<br>另一个实用的经验准则: 内联那些包含循环或 switch 语句的函数常常是得不偿失 (除非在大多数情况下, 这些循环或 switch 语句从不被执行).<br>有些函数即使声明为内联的也不一定会被编译器内联, 这点很重要; 比如虚函数和递归函数就不会被正常内联. 通常, 递归函数不应该声明成内联函数.(递归调用堆栈的展开并不像循环那么简单, 比如递归层数在编译时可能是未知的, 大多数编译器都不支持内联递归函数). 虚函数内联的主要原因则是想把它的函数体放在类定义内, 为了图个方便, 抑或是当作文档描述其行为, 比如精短的存取函数.</p>
-<hr>
-<h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><p>&lt; !–more–&gt;</p>
-<hr>
-<h2 id="new-和-malloc的区别"><a href="#new-和-malloc的区别" class="headerlink" title="new 和 malloc的区别"></a>new 和 malloc的区别</h2><p>&lt; !–more–&gt;</p>
-<ol>
-<li>malloc与free是C++/C语言的标准库函数，new/delete是C++的运算符。它们都可用于申请动态内存和释放内存。</li>
-<li>对于非内部数据类型的对象而言，光用maloc/free无法满足动态对象的要求。对象在创建的同时要自动执行构造函数，对象在消亡之前要自动执行析构函数。由于malloc/free是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加于malloc/free。</li>
-<li>因此C++语言需要一个能完成动态内存分配和初始化工作的运算符new，以一个能完成清理与释放内存工作的运算符delete。注意new/delete不是库函数。</li>
-<li>C++程序经常要调用C函数，而C程序只能用malloc/free管理动态内存<h2 id="hash-冲突及解决办法"><a href="#hash-冲突及解决办法" class="headerlink" title="hash 冲突及解决办法"></a>hash 冲突及解决办法</h2>关键字值不同的元素可能会映象到哈希表的同一地址上就会发生哈希冲突。<br>解决办法：<br>1）开放定址法：当冲突发生时，使用某种探查(亦称探测)技术在散列表中形成一个探查(测)序列。沿此序列逐个单元地查找，直到找到给定 的关键字，或者碰到一个开放的地址(即该地址单元为空)为止（若要插入，在探查到开放的地址，则可将待插入的新结点存人该地址单元）。查找时探查到开放的 地址则表明表中无待查的关键字，即查找失败。<br>2）再哈希法：同时构造多个不同的哈希函数。<br>3）链地址法：将所有哈希地址为i的元素构成一个称为同义词链的单链表，并将单链表的头指针存在哈希表的第i个单元中，因而查找、插入和删除主要在同义词链中进行。链地址法适用于经常进行插入和删除的情况。<br>4）建立公共溢出区：将哈希表分为基本表和溢出表两部分，凡是和基本表发生冲突的元素，一律填入溢出表。</li>
-</ol>
-<hr>
-<h2 id="HashMap与HashTable区别？"><a href="#HashMap与HashTable区别？" class="headerlink" title="HashMap与HashTable区别？"></a>HashMap与HashTable区别？</h2><p>&lt; !–more–&gt;<br>HashMap基于Hashtable实现，不同之处在于HashMap是非同步的，并且允许null，即null value和null key，Hashtable则不允许null。此外，记住一点：hashmap/hashset等凡是带有hash字眼的均基于hashtable实现，没带hash字眼的如set/map均是基于红黑树实现，前者无序，后者有序。</p>
-
-          
+          <h2 id="指针和引用"><a href="#指针和引用" class="headerlink" title="指针和引用"></a>指针和引用</h2>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/31/C-基本知识/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
