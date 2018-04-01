@@ -82,15 +82,17 @@
 <meta name="description" content="指针和引用">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++基本知识">
-<meta property="og:url" content="http://yoursite.com/2018/03/31/C-基本知识/index.html">
+<meta property="og:title" content="C++知识总结">
+<meta property="og:url" content="http://yoursite.com/2018/03/31/C-知识总结/index.html">
 <meta property="og:site_name" content="飞白">
 <meta property="og:description" content="指针和引用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-01T00:07:31.810Z">
+<meta property="og:image" content="http://yoursite.com/2018/03/31/C-知识总结/hc1.jpg">
+<meta property="og:updated_time" content="2018-04-01T00:09:52.506Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++基本知识">
+<meta name="twitter:title" content="C++知识总结">
 <meta name="twitter:description" content="指针和引用">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/31/C-知识总结/hc1.jpg">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/31/C-基本知识/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/31/C-知识总结/"/>
 
 
 
 
 
-  <title>C++基本知识 | 飞白</title>
+  <title>C++知识总结 | 飞白</title>
   
 
 
@@ -243,7 +245,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/C-基本知识/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/C-知识总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John">
@@ -260,7 +262,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++基本知识</h1>
+          <h1 class="post-title" itemprop="name headline">C++知识总结</h1>
         
 
         <div class="post-meta">
@@ -359,7 +361,7 @@
 <li>C++程序经常要调用C函数，而C程序只能用malloc/free管理动态内存</li>
 </ol>
 <hr>
-<h2 id="hash-冲突及解决办法"><a href="#hash-冲突及解决办法" class="headerlink" title="hash 冲突及解决办法"></a>hash 冲突及解决办法</h2><p>关键字值不同的元素可能会映象到哈希表的同一地址上就会发生哈希冲突。<br>解决办法：<br>1）开放定址法：当冲突发生时，使用某种探查(亦称探测)技术在散列表中形成一个探查(测)序列。沿此序列逐个单元地查找，直到找到给定 的关键字，或者碰到一个开放的地址(即该地址单元为空)为止（若要插入，在探查到开放的地址，则可将待插入的新结点存人该地址单元）。查找时探查到开放的 地址则表明表中无待查的关键字，即查找失败。<br>2）再哈希法：同时构造多个不同的哈希函数。<br>3）链地址法：将所有哈希地址为i的元素构成一个称为同义词链的单链表，并将单链表的头指针存在哈希表的第i个单元中，因而查找、插入和删除主要在同义词链中进行。链地址法适用于经常进行插入和删除的情况。<br>4）建立公共溢出区：将哈希表分为基本表和溢出表两部分，凡是和基本表发生冲突的元素，一律填入溢出表。</p>
+<h2 id="hash-冲突及解决办法"><a href="#hash-冲突及解决办法" class="headerlink" title="hash 冲突及解决办法"></a>hash 冲突及解决办法</h2><p>关键字值不同的元素可能会映象到哈希表的同一地址上就会发生哈希冲突。<br>解决办法：<br>1）开放定址法：当冲突发生时，使用某种探查(亦称探测)技术在散列表中形成一个探查(测)序列。沿此序列逐个单元地查找，直到找到给定 的关键字，或者碰到一个开放的地址(即该地址单元为空)为止（若要插入，在探查到开放的地址，则可将待插入的新结点存人该地址单元）。查找时探查到开放的 地址则表明表中无待查的关键字，即查找失败。<br><img src="/2018/03/31/C-知识总结/hc1.jpg" alt="lbxx"><br>2）再哈希法：同时构造多个不同的哈希函数。<br>3）链地址法：将所有哈希地址为i的元素构成一个称为同义词链的单链表，并将单链表的头指针存在哈希表的第i个单元中，因而查找、插入和删除主要在同义词链中进行。链地址法适用于经常进行插入和删除的情况。<br>4）建立公共溢出区：将哈希表分为基本表和溢出表两部分，凡是和基本表发生冲突的元素，一律填入溢出表。</p>
 <hr>
 <h2 id="HashMap与HashTable区别？"><a href="#HashMap与HashTable区别？" class="headerlink" title="HashMap与HashTable区别？"></a>HashMap与HashTable区别？</h2><p>HashMap基于Hashtable实现，不同之处在于HashMap是非同步的，并且允许null，即null value和null key，Hashtable则不允许null。此外，记住一点：hashmap/hashset等凡是带有hash字眼的均基于hashtable实现，没带hash字眼的如set/map均是基于红黑树实现，前者无序，后者有序。</p>
 
@@ -392,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/31/C-知识总结/" rel="next" title="C++知识总结">
-                <i class="fa fa-chevron-left"></i> C++知识总结
+              <a href="/2018/03/30/项目/" rel="next" title="项目总结">
+                <i class="fa fa-chevron-left"></i> 项目总结
               </a>
             
           </div>
@@ -402,8 +404,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/31/数据结构基本知识/" rel="prev" title="数据结构基本知识">
-                数据结构基本知识 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/31/C-基本知识/" rel="prev" title="C++基本知识">
+                C++基本知识 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
