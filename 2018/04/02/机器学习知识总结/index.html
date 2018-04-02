@@ -82,18 +82,18 @@
 <meta name="description" content="过拟合与欠拟合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习知识总结">
-<meta property="og:url" content="http://yoursite.com/2018/04/01/机器学习知识总结/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/02/机器学习知识总结/index.html">
 <meta property="og:site_name" content="飞白">
 <meta property="og:description" content="过拟合与欠拟合">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/04/01/机器学习知识总结/duishusunshihanshu.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/01/机器学习知识总结/pingfanggenwucha.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/01/机器学习知识总结/zhongweishuwucha.png">
-<meta property="og:updated_time" content="2018-04-02T00:57:44.778Z">
+<meta property="og:image" content="http://yoursite.com/2018/04/02/机器学习知识总结/duishusunshihanshu.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/02/机器学习知识总结/pingfanggenwucha.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/02/机器学习知识总结/zhongweishuwucha.png">
+<meta property="og:updated_time" content="2018-04-02T01:29:45.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习知识总结">
 <meta name="twitter:description" content="过拟合与欠拟合">
-<meta name="twitter:image" content="http://yoursite.com/2018/04/01/机器学习知识总结/duishusunshihanshu.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/02/机器学习知识总结/duishusunshihanshu.png">
 
 
 
@@ -123,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/01/机器学习知识总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/02/机器学习知识总结/"/>
 
 
 
@@ -246,7 +246,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/01/机器学习知识总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/02/机器学习知识总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John">
@@ -275,8 +275,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T08:48:43+08:00">
-                2018-04-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T08:48:43+08:00">
+                2018-04-02
               </time>
             
 
@@ -350,10 +350,10 @@
 <p>模型无法从训练数据中获得更新（如低损失）。</p>
 <p>模型不稳定，导致更新过程中的损失出现显著变化。</p>
 <p>训练过程中，模型损失变成 NaN。<br>4.如何修复梯度爆炸问题？<br>①重新设计网络模型<br>②使用Relu激活函数<br>③使用长短期记忆网络<br>④使用梯度截断<br>⑤使用权重正则化：检查网络权重的大小，并惩罚产生较大权重值的损失函数</p>
-<h2 id="LR-SVM-朴素贝叶斯-RF-GBDT-Adaboost-xgboost"><a href="#LR-SVM-朴素贝叶斯-RF-GBDT-Adaboost-xgboost" class="headerlink" title="LR,SVM,朴素贝叶斯,RF,GBDT,Adaboost,xgboost"></a>LR,SVM,朴素贝叶斯,RF,GBDT,Adaboost,xgboost</h2><h3 id="LR"><a href="#LR" class="headerlink" title="LR"></a>LR</h3><h3 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h3><h3 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h3><h3 id="RF"><a href="#RF" class="headerlink" title="RF"></a>RF</h3><h3 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h3><h3 id="Adaboost"><a href="#Adaboost" class="headerlink" title="Adaboost"></a>Adaboost</h3><h3 id="xgboost"><a href="#xgboost" class="headerlink" title="xgboost"></a>xgboost</h3><h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><h3 id="分类评价指标"><a href="#分类评价指标" class="headerlink" title="分类评价指标"></a>分类评价指标</h3><p>1.准确率<br>2.平均准确率<br>计算每个类别的准确率最后取平均<br>3.对数损失函数<br>在分类输出中，若输出不再是0-1，而是实数值，即属于每个类别的概率，那么可以使用Log-loss对分类结果进行评价。这个输出概率表示该记录所属的其对应的类别的置信度。比如如果样本本属于类别0，但是分类器则输出其属于类别1的概率为0.51，那么这种情况认为分类器出错了。该概率接近了分类器的分类的边界概率0.5。Log-loss是一个软的分类准确率度量方法，使用概率来表示其所属的类别的置信度。Log-loss具体的数学表达式为：<br><img src="/2018/04/01/机器学习知识总结/duishusunshihanshu.png" alt="lbxx"><br>其中，yiyi是指第ii个样本所属的真实类别0或者1，pipi表示第ii个样本属于类别1的概率，这样上式中的两个部分对于每个样本只会选择其一，因为有一个一定为0，当预测与实际类别完全匹配时，则两个部分都是0，其中假定0log0=0。<br>4.精确率，召回率，F-measure<br>5.AUC：即曲线下的面积，这条曲线便是ROC曲线</p>
-<h3 id="回归评价指标"><a href="#回归评价指标" class="headerlink" title="回归评价指标"></a>回归评价指标</h3><p>与分类不同的是，回归是对连续的实数值进行预测，即输出值是连续的实数值，而分类中是离散值。例如，给你历史股票价格，公司与市场的一些信息，需要你去预测将来一段时间内股票的价格走势。那么这个任务便是回归任务。对于回归模型的评价指标主要有以下几种：<br>1.RMSE:回归模型中最常用的评价模型便是RMSE（root mean square error，平方根误差），其又被称为RMSD（root mean square deviation），其定义如下：<br><img src="/2018/04/01/机器学习知识总结/pingfanggenwucha.png" alt="lbxx"><br>其中，yi是第i个样本的真实值，yi^是第ii个样本的预测值，n是样本的个数。该评价指标使用的便是欧式距离。<br>RMSE虽然广为使用，但是其存在一些缺点，因为它是使用平均误差，而平均值对异常点（outliers）较敏感，如果回归器对某个点的回归值很不理性，那么它的误差则较大，从而会对RMSE的值有较大影响，即平均值是非鲁棒的。<br>2.Quantiles of Errors<br>在现实数据中，往往会存在异常点，并且模型可能对异常点拟合得并不好，因此提高评价指标的鲁棒性至关重要，于是可以使用中位数来替代平均数，如MAPE：<br><img src="/2018/04/01/机器学习知识总结/zhongweishuwucha.png" alt="lbxx"><br>MAPE是一个相对误差的中位数，当然也可以使用别的分位数。<br>有时我们可以使用相对误差不超过设定的值来计算平均误差，如当|yi−yi^|/yi|yi−yi^|/yi超过100%（具体的值要根据问题的实际情况）则认为其是一个异常点，，从而剔除这个异常点，将异常点剔除之后，再计算平均误差或者中位数误差来对模型进行评价。</p>
+<h2 id="LR-SVM-朴素贝叶斯-RF-GBDT-Adaboost-xgboost"><a href="#LR-SVM-朴素贝叶斯-RF-GBDT-Adaboost-xgboost" class="headerlink" title="LR,SVM,朴素贝叶斯,RF,GBDT,Adaboost,xgboost"></a>LR,SVM,朴素贝叶斯,RF,GBDT,Adaboost,xgboost</h2><h3 id="LR"><a href="#LR" class="headerlink" title="LR"></a>LR</h3><h3 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h3><h3 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h3><h3 id="RF"><a href="#RF" class="headerlink" title="RF"></a>RF</h3><h3 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h3><h3 id="Adaboost"><a href="#Adaboost" class="headerlink" title="Adaboost"></a>Adaboost</h3><h3 id="xgboost"><a href="#xgboost" class="headerlink" title="xgboost"></a>xgboost</h3><h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><h3 id="分类评价指标"><a href="#分类评价指标" class="headerlink" title="分类评价指标"></a>分类评价指标</h3><p>1.准确率<br>2.平均准确率<br>计算每个类别的准确率最后取平均<br>3.对数损失函数<br>在分类输出中，若输出不再是0-1，而是实数值，即属于每个类别的概率，那么可以使用Log-loss对分类结果进行评价。这个输出概率表示该记录所属的其对应的类别的置信度。比如如果样本本属于类别0，但是分类器则输出其属于类别1的概率为0.51，那么这种情况认为分类器出错了。该概率接近了分类器的分类的边界概率0.5。Log-loss是一个软的分类准确率度量方法，使用概率来表示其所属的类别的置信度。Log-loss具体的数学表达式为：<br><img src="/2018/04/02/机器学习知识总结/duishusunshihanshu.png" alt="lbxx"><br>其中，yiyi是指第ii个样本所属的真实类别0或者1，pipi表示第ii个样本属于类别1的概率，这样上式中的两个部分对于每个样本只会选择其一，因为有一个一定为0，当预测与实际类别完全匹配时，则两个部分都是0，其中假定0log0=0。<br>4.精确率，召回率，F-measure<br>5.AUC：即曲线下的面积，这条曲线便是ROC曲线</p>
+<h3 id="回归评价指标"><a href="#回归评价指标" class="headerlink" title="回归评价指标"></a>回归评价指标</h3><p>与分类不同的是，回归是对连续的实数值进行预测，即输出值是连续的实数值，而分类中是离散值。例如，给你历史股票价格，公司与市场的一些信息，需要你去预测将来一段时间内股票的价格走势。那么这个任务便是回归任务。对于回归模型的评价指标主要有以下几种：<br>1.RMSE:回归模型中最常用的评价模型便是RMSE（root mean square error，平方根误差），其又被称为RMSD（root mean square deviation），其定义如下：<br><img src="/2018/04/02/机器学习知识总结/pingfanggenwucha.png" alt="lbxx"><br>其中，yi是第i个样本的真实值，yi^是第ii个样本的预测值，n是样本的个数。该评价指标使用的便是欧式距离。<br>RMSE虽然广为使用，但是其存在一些缺点，因为它是使用平均误差，而平均值对异常点（outliers）较敏感，如果回归器对某个点的回归值很不理性，那么它的误差则较大，从而会对RMSE的值有较大影响，即平均值是非鲁棒的。<br>2.Quantiles of Errors<br>在现实数据中，往往会存在异常点，并且模型可能对异常点拟合得并不好，因此提高评价指标的鲁棒性至关重要，于是可以使用中位数来替代平均数，如MAPE：<br><img src="/2018/04/02/机器学习知识总结/zhongweishuwucha.png" alt="lbxx"><br>MAPE是一个相对误差的中位数，当然也可以使用别的分位数。<br>有时我们可以使用相对误差不超过设定的值来计算平均误差，如当|yi−yi^|/yi|yi−yi^|/yi超过100%（具体的值要根据问题的实际情况）则认为其是一个异常点，，从而剔除这个异常点，将异常点剔除之后，再计算平均误差或者中位数误差来对模型进行评价。</p>
 <h3 id="排序评价指标"><a href="#排序评价指标" class="headerlink" title="排序评价指标"></a>排序评价指标</h3><p>1.精确率-召回率-F-measure</p>
-<h2 id="重采样"><a href="#重采样" class="headerlink" title="重采样"></a>重采样</h2><h2 id="超参数"><a href="#超参数" class="headerlink" title="超参数"></a>超参数</h2>
+<h2 id="重采样"><a href="#重采样" class="headerlink" title="重采样"></a>重采样</h2><h2 id="超参数"><a href="#超参数" class="headerlink" title="超参数"></a>超参数</h2><h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2>
       
     </div>
     
@@ -377,8 +377,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/31/C-知识总结/" rel="next" title="C++知识总结">
-                <i class="fa fa-chevron-left"></i> C++知识总结
+              <a href="/2018/04/01/算法/" rel="next" title="算法">
+                <i class="fa fa-chevron-left"></i> 算法
               </a>
             
           </div>
@@ -386,10 +386,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/01/算法/" rel="prev" title="算法">
-                算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -521,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#过拟合与欠拟合"><span class="nav-number">1.</span> <span class="nav-text">过拟合与欠拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#激活函数"><span class="nav-number">2.</span> <span class="nav-text">激活函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度爆炸与梯度消失"><span class="nav-number">3.</span> <span class="nav-text">梯度爆炸与梯度消失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LR-SVM-朴素贝叶斯-RF-GBDT-Adaboost-xgboost"><span class="nav-number">4.</span> <span class="nav-text">LR,SVM,朴素贝叶斯,RF,GBDT,Adaboost,xgboost</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LR"><span class="nav-number">4.1.</span> <span class="nav-text">LR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM"><span class="nav-number">4.2.</span> <span class="nav-text">SVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#朴素贝叶斯"><span class="nav-number">4.3.</span> <span class="nav-text">朴素贝叶斯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RF"><span class="nav-number">4.4.</span> <span class="nav-text">RF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GBDT"><span class="nav-number">4.5.</span> <span class="nav-text">GBDT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adaboost"><span class="nav-number">4.6.</span> <span class="nav-text">Adaboost</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xgboost"><span class="nav-number">4.7.</span> <span class="nav-text">xgboost</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评价指标"><span class="nav-number">5.</span> <span class="nav-text">评价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类评价指标"><span class="nav-number">5.1.</span> <span class="nav-text">分类评价指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回归评价指标"><span class="nav-number">5.2.</span> <span class="nav-text">回归评价指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序评价指标"><span class="nav-number">5.3.</span> <span class="nav-text">排序评价指标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重采样"><span class="nav-number">6.</span> <span class="nav-text">重采样</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超参数"><span class="nav-number">7.</span> <span class="nav-text">超参数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#过拟合与欠拟合"><span class="nav-number">1.</span> <span class="nav-text">过拟合与欠拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#激活函数"><span class="nav-number">2.</span> <span class="nav-text">激活函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度爆炸与梯度消失"><span class="nav-number">3.</span> <span class="nav-text">梯度爆炸与梯度消失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LR-SVM-朴素贝叶斯-RF-GBDT-Adaboost-xgboost"><span class="nav-number">4.</span> <span class="nav-text">LR,SVM,朴素贝叶斯,RF,GBDT,Adaboost,xgboost</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LR"><span class="nav-number">4.1.</span> <span class="nav-text">LR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM"><span class="nav-number">4.2.</span> <span class="nav-text">SVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#朴素贝叶斯"><span class="nav-number">4.3.</span> <span class="nav-text">朴素贝叶斯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RF"><span class="nav-number">4.4.</span> <span class="nav-text">RF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GBDT"><span class="nav-number">4.5.</span> <span class="nav-text">GBDT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adaboost"><span class="nav-number">4.6.</span> <span class="nav-text">Adaboost</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xgboost"><span class="nav-number">4.7.</span> <span class="nav-text">xgboost</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评价指标"><span class="nav-number">5.</span> <span class="nav-text">评价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类评价指标"><span class="nav-number">5.1.</span> <span class="nav-text">分类评价指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回归评价指标"><span class="nav-number">5.2.</span> <span class="nav-text">回归评价指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序评价指标"><span class="nav-number">5.3.</span> <span class="nav-text">排序评价指标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重采样"><span class="nav-number">6.</span> <span class="nav-text">重采样</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超参数"><span class="nav-number">7.</span> <span class="nav-text">超参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚类"><span class="nav-number">8.</span> <span class="nav-text">聚类</span></a></li></ol></div>
             
 
           </div>

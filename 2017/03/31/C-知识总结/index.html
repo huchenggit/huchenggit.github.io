@@ -82,24 +82,24 @@
 <meta name="description" content="指针和引用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++知识总结">
-<meta property="og:url" content="http://yoursite.com/2018/03/31/C-知识总结/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/03/31/C-知识总结/index.html">
 <meta property="og:site_name" content="飞白">
 <meta property="og:description" content="指针和引用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/03/31/C-知识总结/xuhanshu1.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/31/C-知识总结/xuhanshu2.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/31/C-知识总结/xuhanshu3.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/31/C-知识总结/xuhanshu4.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/31/C-知识总结/newandmalloc.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/31/C-知识总结/开放地址法.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/31/C-知识总结/开放地址法2.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/31/C-知识总结/链地址法.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/31/C-知识总结/公共溢出区.png">
-<meta property="og:updated_time" content="2018-04-01T00:52:07.485Z">
+<meta property="og:image" content="http://yoursite.com/2017/03/31/C-知识总结/xuhanshu1.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/31/C-知识总结/xuhanshu2.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/31/C-知识总结/xuhanshu3.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/31/C-知识总结/xuhanshu4.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/31/C-知识总结/newandmalloc.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/31/C-知识总结/开放地址法.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/31/C-知识总结/开放地址法2.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/31/C-知识总结/链地址法.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/31/C-知识总结/公共溢出区.png">
+<meta property="og:updated_time" content="2018-04-02T01:29:26.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++知识总结">
 <meta name="twitter:description" content="指针和引用">
-<meta name="twitter:image" content="http://yoursite.com/2018/03/31/C-知识总结/xuhanshu1.png">
+<meta name="twitter:image" content="http://yoursite.com/2017/03/31/C-知识总结/xuhanshu1.png">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/31/C-知识总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/31/C-知识总结/"/>
 
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/C-知识总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/31/C-知识总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-31T09:28:27+08:00">
-                2018-03-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T09:28:27+08:00">
+                2017-03-31
               </time>
             
 
@@ -361,9 +361,9 @@
 <p>虽然有这么多好处，但是写成函数有一个潜在的缺点：调用函数比求解等价表达式要慢得多。在大多数的机器上，调用函数都要做很多工作：调用前要先保存寄存器，并在返回时恢复，复制实参，程序还必须转向一个新位置执<br>2.关键字 inline 必须与函数定义体放在一起才能使函数成为内联，仅将 inline 放在函数声明前面不起任何作用。<br>3.定义在类声明之中的成员函数将自动地成为内联函数，例如：<br>复制代码 代码如下:<br>class A<br>{<br>public:<br> void Foo(int x, int y) { … }   // 自动地成为内联函数<br>}<br>但是编译器是否将它真正内联则要看 Foo函数如何定义<br>4.内联函数应该在头文件中定义，这一点不同于其他函数。编译器在调用点内联展开函数的代码时，必须能够找到 inline 函数的定义才能将调用函数替换为函数代码，而对于在头文件中仅有函数声明是不够的。<br>当然内联函数定义也可以放在源文件中，但此时只有定义的那个源文件可以用它，而且必须为每个源文件拷贝一份定义(即每个源文件里的定义必须是完全相同的)，当然即使是放在头文件中，也是对每个定义做一份拷贝，只不过是编译器替你完成这种拷贝罢了。<br>5.慎用内联<br>Tip： 只有当函数只有 10 行甚至更少时才将其定义为内联函数.<br>优点: 当函数体比较小的时候, 内联该函数可以令目标代码更加高效. 对于存取函数以及其它函数体比较短, 性能关键的函数, 鼓励使用内联.<br>缺点: 滥用内联将导致程序变慢. 内联可能使目标代码量或增或减, 这取决于内联函数的大小. 内联非常短小的存取函数通常会减少代码大小, 但内联一个相当大的函数将戏剧性的增加代码大小. 现代处理器由于更好的利用了指令缓存, 小巧的代码往往执行更快。<br>结论: 一个较为合理的经验准则是, 不要内联超过 10 行的函数. 谨慎对待析构函数, 析构函数往往比其表面看起来要更长, 因为有隐含的成员和基类析构函数被调用!<br>另一个实用的经验准则: 内联那些包含循环或 switch 语句的函数常常是得不偿失 (除非在大多数情况下, 这些循环或 switch 语句从不被执行).<br>有些函数即使声明为内联的也不一定会被编译器内联, 这点很重要; 比如虚函数和递归函数就不会被正常内联. 通常, 递归函数不应该声明成内联函数.(递归调用堆栈的展开并不像循环那么简单, 比如递归层数在编译时可能是未知的, 大多数编译器都不支持内联递归函数). 虚函数内联的主要原因则是想把它的函数体放在类定义内, 为了图个方便, 抑或是当作文档描述其行为, 比如精短的存取函数.</p>
 <hr>
 <h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><p>首先，什么是多态，什么又是虚函数呢？先来看看维基百科对多态的解释：</p>
-<p>“多态（英语：polymorphism），是指计算机程序运行时，相同的消息可能会送给多个不同的类别之对象，而系统可依据对象所属类别，引发对应类别的方法，而有不同的行为。简单来说，所谓多态意指相同的消息给予不同的对象会引发不同的动作称之。”其实更简单地来说，就是“在用父类指针调用函数时，实际调用的是指针指向的实际类型（子类）的成员函数”。多态性使得程序调用的函数是在运行时动态确定的，而不是在编译时静态确定的。而虚函数则是加了virtual修饰词的类的成员函数。下面我们来看一个虚函数的例子：<br><img src="/2018/03/31/C-知识总结/xuhanshu1.png" alt="lbxx"><br><img src="/2018/03/31/C-知识总结/xuhanshu2.png" alt="lbxx"><br>在上述例子中，我们首先定义了一个基类base，基类有一个名为vir_func的虚函数，和一个名为func的普通成员函数。而类A，B都是由类base派生的子类，并且都对成员函数进行了重载。然后我们定义三个base<em>类型的指针Base、a、b分别指向类base、A、B。可以看到，当使用这三个指针调用func函数时，调用的都是基类base的函数。而使用这三个指针调用虚函数vir_func时，调用的是指针指向的实际类型的函数。最后，我们将指针b做强制类型转换，转换为A</em>类型，然后分别调用func和vir_func函数，发现普通函数调用的是类A的函数，而虚函数调用的是类B的函数。以上，我们可以得出结论“当使用类的指针调用成员函数时，普通函数由指针类型决定，而虚函数由指针指向的实际类型决定”。那么，虚函数又是怎么实现的呢？</p>
+<p>“多态（英语：polymorphism），是指计算机程序运行时，相同的消息可能会送给多个不同的类别之对象，而系统可依据对象所属类别，引发对应类别的方法，而有不同的行为。简单来说，所谓多态意指相同的消息给予不同的对象会引发不同的动作称之。”其实更简单地来说，就是“在用父类指针调用函数时，实际调用的是指针指向的实际类型（子类）的成员函数”。多态性使得程序调用的函数是在运行时动态确定的，而不是在编译时静态确定的。而虚函数则是加了virtual修饰词的类的成员函数。下面我们来看一个虚函数的例子：<br><img src="/2017/03/31/C-知识总结/xuhanshu1.png" alt="lbxx"><br><img src="/2017/03/31/C-知识总结/xuhanshu2.png" alt="lbxx"><br>在上述例子中，我们首先定义了一个基类base，基类有一个名为vir_func的虚函数，和一个名为func的普通成员函数。而类A，B都是由类base派生的子类，并且都对成员函数进行了重载。然后我们定义三个base<em>类型的指针Base、a、b分别指向类base、A、B。可以看到，当使用这三个指针调用func函数时，调用的都是基类base的函数。而使用这三个指针调用虚函数vir_func时，调用的是指针指向的实际类型的函数。最后，我们将指针b做强制类型转换，转换为A</em>类型，然后分别调用func和vir_func函数，发现普通函数调用的是类A的函数，而虚函数调用的是类B的函数。以上，我们可以得出结论“当使用类的指针调用成员函数时，普通函数由指针类型决定，而虚函数由指针指向的实际类型决定”。那么，虚函数又是怎么实现的呢？</p>
 <pre><code>在解释虚函数的实现方式之前，我们首先需要了解对象的内存布局，在这里先做个简单地介绍，后续再专门写一篇详细介绍对象内存布局的文章（这也是一个面试必问题）。对于一个只包含非静态成员变量和普通成员函数的类，如“class C {void fun_a();void fun_b();int var}；”，其内存布局如下图：
-</code></pre><p><img src="/2018/03/31/C-知识总结/xuhanshu3.png" alt="lbxx"><br>其中成员函数放在代码区，为该类的所有对象公有，即不管新建多少个该类的对象，所对应的都是同一个函数存储区的函数。而成员变量则为各个对象所私有，即每新建一个对象都会新建一块内存区用来存储var值。在调用成员函数时，程序会根据类的类型，找到对应代码区所对应的函数并进行调用。在文章开头的例子中，Base、a、b都是base类型的指针。调用普通函数时，程序根据指针的类型到类base所对应的代码区找到所对应的函数，所以都调用了类base的func函数，即指针的类型决定了普通函数的调用。那么虚函数又是怎么实现的呢？对于“class D{void func_a();virtul void func_b();int var}”这个类，其内存布局为：<br><img src="/2018/03/31/C-知识总结/xuhanshu4.png" alt="lbxx"><br>这时如果sizeof一个类D的对象，会发现比类C的对象大4个字节。多出来的这4个字节就是实现虚函数的关键—-虚函数表指针vptr。这个指针指向一张名为“虚函数表”（vtbl）的表，而表中的数据则为函数指针，存储了虚函数fun_b()具体实现所对应的位置。注意，普通函数、虚函数、虚函数表都是同一个类的所有对象公有的，只有成员变量和虚函数表指针是每个对象私有的，sizeof的值也只包括vptr和var所占内存的大小（也是个常出现的问题），并且vptr通常会在对象内存的最起始位置。另外，当类有多个虚函数时，仍然只有一个虚函数表指针vptr，而此时的虚函数表vtbl中会有多个函数指针，分别指向对应的虚函数实现区域。在重复一遍虚函数实现的过程：通过对象内存中的vptr找到虚函数表vtbl，接着通过vtbl找到对应虚函数的实现区域并进行调用。如开头例子中，当调用vir_func函数时，分别通过Base、a、b指针找到对应的vptr，然后找到各自的vtbl，最后通过vtbl找到各自虚函数的具体实现。所以虚函数的调用时由指针所指向内存块的具体类型决定的。</p>
+</code></pre><p><img src="/2017/03/31/C-知识总结/xuhanshu3.png" alt="lbxx"><br>其中成员函数放在代码区，为该类的所有对象公有，即不管新建多少个该类的对象，所对应的都是同一个函数存储区的函数。而成员变量则为各个对象所私有，即每新建一个对象都会新建一块内存区用来存储var值。在调用成员函数时，程序会根据类的类型，找到对应代码区所对应的函数并进行调用。在文章开头的例子中，Base、a、b都是base类型的指针。调用普通函数时，程序根据指针的类型到类base所对应的代码区找到所对应的函数，所以都调用了类base的func函数，即指针的类型决定了普通函数的调用。那么虚函数又是怎么实现的呢？对于“class D{void func_a();virtul void func_b();int var}”这个类，其内存布局为：<br><img src="/2017/03/31/C-知识总结/xuhanshu4.png" alt="lbxx"><br>这时如果sizeof一个类D的对象，会发现比类C的对象大4个字节。多出来的这4个字节就是实现虚函数的关键—-虚函数表指针vptr。这个指针指向一张名为“虚函数表”（vtbl）的表，而表中的数据则为函数指针，存储了虚函数fun_b()具体实现所对应的位置。注意，普通函数、虚函数、虚函数表都是同一个类的所有对象公有的，只有成员变量和虚函数表指针是每个对象私有的，sizeof的值也只包括vptr和var所占内存的大小（也是个常出现的问题），并且vptr通常会在对象内存的最起始位置。另外，当类有多个虚函数时，仍然只有一个虚函数表指针vptr，而此时的虚函数表vtbl中会有多个函数指针，分别指向对应的虚函数实现区域。在重复一遍虚函数实现的过程：通过对象内存中的vptr找到虚函数表vtbl，接着通过vtbl找到对应虚函数的实现区域并进行调用。如开头例子中，当调用vir_func函数时，分别通过Base、a、b指针找到对应的vptr，然后找到各自的vtbl，最后通过vtbl找到各自虚函数的具体实现。所以虚函数的调用时由指针所指向内存块的具体类型决定的。</p>
 <pre><code>以上就是虚函数的实现方式。对于虚函数还有个实际使用和面试经常会出现的问题：构造函数和析构函数可以是虚函数吗？答案是构造函数不能是虚函数，析构函数可以是虚函数且推荐最好设置为虚函数。下面我们来看看为什么。首先，我们已经知道虚函数的实现则是通过对象内存中的vptr来实现的。而构造函数是用来实例化一个对象的，通俗来讲就是为对象内存中的值做初始化操作。那么在构造函数完成之前，vptr是没有值的，也就无法通过vptr找到作为虚函数的构造函数所在的代码区，所以构造函数只能作为普通函数存放在类所指定的代码区中。那么为什么析构函数推荐最好设置为虚函数呢？如文章开头的例子中，当我们delete(a)的时候，如果析构函数不是虚函数，那么调用的将会是基类base的析构函数。而当继承的时候，通常派生类会在基类的基础上定义自己的成员，此时我们当时是希望可以调用派生类的析构函数对新定义的成员也进行析构啦。
 
 对于构造函数和析构函数与虚函数的关系我们也可以从另一方面来理解。通常是如例子中base *a=new(A)这样创建一个对象时调用构造函数，此时我们是在new函数中直接指定类名字的，当然会直接调用对应类的构造函数，不会出现基类类型实际指向子类的情况出现。而调用析构函数通常是针对对象的操作，如delete(a)，此时我们当然希望可以调用到a实际指向的类型（类A）的析构函数，故需要设置为虚函数。
@@ -381,10 +381,10 @@
 </ol>
 <p>new没有这样直观的配套设施来扩充内存。</p>
 <ol start="10">
-<li>客户处理内存分配不足<br>总结：<br><img src="/2018/03/31/C-知识总结/newandmalloc.png" alt="lbxx"><br><a href="http://blog.jobbole.com/102002/" target="_blank" rel="noopener">参考资料</a></li>
+<li>客户处理内存分配不足<br>总结：<br><img src="/2017/03/31/C-知识总结/newandmalloc.png" alt="lbxx"><br><a href="http://blog.jobbole.com/102002/" target="_blank" rel="noopener">参考资料</a></li>
 </ol>
 <hr>
-<h2 id="hash-冲突及解决办法"><a href="#hash-冲突及解决办法" class="headerlink" title="hash 冲突及解决办法"></a>hash 冲突及解决办法</h2><p>关键字值不同的元素可能会映象到哈希表的同一地址上就会发生哈希冲突。<br>解决办法：<br>1）开放定址法：当冲突发生时，使用某种探查(亦称探测)技术在散列表中形成一个探查(测)序列。沿此序列逐个单元地查找，直到找到给定 的关键字，或者碰到一个开放的地址(即该地址单元为空)为止（若要插入，在探查到开放的地址，则可将待插入的新结点存人该地址单元）。查找时探查到开放的 地址则表明表中无待查的关键字，即查找失败。<br>Hi = (H(key) + di) MOD m, i=1,2,…, k(k&lt;=m-1)，其中H(key)为散列函数，m为散列表长，di为增量序列。di可有下列三种取法：<br>（1）di=1,2,3,…, m-1，称为线性探测再散列；<br>（2）di=1^2, -(1^2), 2^2, -(2^2), 3^2, …, ±(k^2),(k&lt;=m/2)，称二为次探测再散列；<br>（3）di=伪随机数序列，称为伪随机探测再散列。<br>所谓伪随机数，用同样的随机种子，将得到相同的数列。<br><img src="/2018/03/31/C-知识总结/开放地址法.png" alt="lbxx"><br><img src="/2018/03/31/C-知识总结/开放地址法2.png" alt="lbxx"><br>2）再哈希法：同时构造多个不同的哈希函数。<br>3）链地址法：将所有哈希地址为i的元素构成一个称为同义词链的单链表，并将单链表的头指针存在哈希表的第i个单元中，因而查找、插入和删除主要在同义词链中进行。链地址法适用于经常进行插入和删除的情况。<br><img src="/2018/03/31/C-知识总结/链地址法.png" alt="lbxx"><br>4）建立公共溢出区：将哈希表分为基本表和溢出表两部分，凡是和基本表发生冲突的元素，一律填入溢出表。<br><img src="/2018/03/31/C-知识总结/公共溢出区.png" alt="lbxx"></p>
+<h2 id="hash-冲突及解决办法"><a href="#hash-冲突及解决办法" class="headerlink" title="hash 冲突及解决办法"></a>hash 冲突及解决办法</h2><p>关键字值不同的元素可能会映象到哈希表的同一地址上就会发生哈希冲突。<br>解决办法：<br>1）开放定址法：当冲突发生时，使用某种探查(亦称探测)技术在散列表中形成一个探查(测)序列。沿此序列逐个单元地查找，直到找到给定 的关键字，或者碰到一个开放的地址(即该地址单元为空)为止（若要插入，在探查到开放的地址，则可将待插入的新结点存人该地址单元）。查找时探查到开放的 地址则表明表中无待查的关键字，即查找失败。<br>Hi = (H(key) + di) MOD m, i=1,2,…, k(k&lt;=m-1)，其中H(key)为散列函数，m为散列表长，di为增量序列。di可有下列三种取法：<br>（1）di=1,2,3,…, m-1，称为线性探测再散列；<br>（2）di=1^2, -(1^2), 2^2, -(2^2), 3^2, …, ±(k^2),(k&lt;=m/2)，称二为次探测再散列；<br>（3）di=伪随机数序列，称为伪随机探测再散列。<br>所谓伪随机数，用同样的随机种子，将得到相同的数列。<br><img src="/2017/03/31/C-知识总结/开放地址法.png" alt="lbxx"><br><img src="/2017/03/31/C-知识总结/开放地址法2.png" alt="lbxx"><br>2）再哈希法：同时构造多个不同的哈希函数。<br>3）链地址法：将所有哈希地址为i的元素构成一个称为同义词链的单链表，并将单链表的头指针存在哈希表的第i个单元中，因而查找、插入和删除主要在同义词链中进行。链地址法适用于经常进行插入和删除的情况。<br><img src="/2017/03/31/C-知识总结/链地址法.png" alt="lbxx"><br>4）建立公共溢出区：将哈希表分为基本表和溢出表两部分，凡是和基本表发生冲突的元素，一律填入溢出表。<br><img src="/2017/03/31/C-知识总结/公共溢出区.png" alt="lbxx"></p>
 <hr>
 <h2 id="HashMap与HashTable区别？"><a href="#HashMap与HashTable区别？" class="headerlink" title="HashMap与HashTable区别？"></a>HashMap与HashTable区别？</h2><p>HashMap基于Hashtable实现，不同之处在于HashMap是非同步的，并且允许null，即null value和null key，Hashtable则不允许null。此外，记住一点：hashmap/hashset等凡是带有hash字眼的均基于hashtable实现，没带hash字眼的如set/map均是基于红黑树实现，前者无序，后者有序。</p>
 
@@ -411,8 +411,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/30/项目/" rel="next" title="项目总结">
-                <i class="fa fa-chevron-left"></i> 项目总结
+              <a href="/2016/06/01/mianshizongjie/" rel="next" title="面试总结">
+                <i class="fa fa-chevron-left"></i> 面试总结
               </a>
             
           </div>
@@ -421,8 +421,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/01/机器学习知识总结/" rel="prev" title="机器学习知识总结">
-                机器学习知识总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/30/项目/" rel="prev" title="项目总结">
+                项目总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
